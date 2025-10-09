@@ -49,6 +49,7 @@ export default function Player() {
     <>
       <div className="player">
         <AudioPlayer
+          className="audioPlayer"
           ref={playerRef}
           autoPlay
           src={nowPlayingTrack?.audio_url || ""}
@@ -73,7 +74,7 @@ export default function Player() {
           />
         </div>
 
-        <Playlist />
+        {/* <Playlist /> */}
       </div>
     </>
   );
