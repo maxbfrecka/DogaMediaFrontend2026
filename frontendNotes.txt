@@ -1,0 +1,27 @@
+env.dev and env.prod work with globaVariables.js which is imported wherever it is needed.
+
+
+upload to s3:
+npm run build
+aws s3 sync build/ s3://dogamedia-database-frontend --delete
+
+
+there are a few steps to making a static s3:
+1. build and upload
+2. make it public obviously
+3. enable static website hosting
+4. add bucket policy:
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowPublicRead",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::dogamedia-database-frontend/*"
+    }
+  ]
+}
+
+5. rerun the upload to s3 code on changes and updates

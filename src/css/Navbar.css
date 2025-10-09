@@ -1,0 +1,19 @@
+.Navbar {
+  height: 20px;
+  background-color: greenyellow;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
+  gap: 10px;
+}
+
+.back {
+  cursor: pointer;
+}
+
+.back {
+  cursor: pointer;
+}

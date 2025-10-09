@@ -1,0 +1,3 @@
+flex help:
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://medium.com/clover-platform-blog/modular-scss-and-why-you-need-it-6bb2d8c40fd8

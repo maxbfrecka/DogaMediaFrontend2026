@@ -1,0 +1,85 @@
+.loadbarContainer {
+  width: 180px;
+  align-items: center;
+  text-align: center;
+}
+.loadwaveContainer {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(116, 239, 2);
+  animation: loadcolors 5s linear infinite;
+}
+.loadwave {
+  width: 5px;
+  height: 20px;
+  font-family: monospace;
+  color: rgba(210, 21, 21, 0.673);
+  background: linear-gradient(45deg, cyan, #fff);
+  margin: 5px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+}
+.loadwave:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.loadwave:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.loadwave:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.loadwave:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.loadwave:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.loadwave:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.loadwave:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.loadwave:nth-child(9) {
+  animation-delay: 0.8s;
+}
+.loadwave:nth-child(10) {
+  animation-delay: 0.9s;
+}
+.loadwave:nth-child(11) {
+  animation-delay: 1s;
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(0);
+    background-color: pink;
+  }
+  50% {
+    transform: scale(1);
+    background-color: aqua;
+  }
+  100% {
+    transform: scale(0);
+    background-color: pink;
+  }
+}
+@keyframes loadcolors {
+  0% {
+    background-color: rgb(116, 239, 2);
+  }
+  25% {
+    background-color: rgb(0, 72, 255);
+  }
+  50% {
+    background-color: rgb(255, 4, 0);
+  }
+  75% {
+    background-color: rgb(214, 228, 5);
+  }
+  100% {
+    background-color: rgb(116, 239, 2);
+  }
+}

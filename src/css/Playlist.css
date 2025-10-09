@@ -1,0 +1,11 @@
+.playlist {
+  display: flex;
+}
+
+.playlistCoverImage {
+  height: 20px;
+}
+
+.playlistTrackTitle {
+  font-size: 9px;
+}

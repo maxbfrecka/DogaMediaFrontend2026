@@ -1,0 +1,6 @@
+.releasesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.2rem;
+  justify-content: flex-start;
+}

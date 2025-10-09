@@ -1,0 +1,254 @@
+.playerContainer {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  mix-blend-mode: difference;
+}
+/* .playerContainer  * {
+    display: none;
+ }
+.playerContainer > * {
+    display: none;
+ } */
+.player {
+  padding: 10px;
+  margin-top: 7px;
+  //background-color:rgb(224, 224, 38);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#nowPlayingVideo {
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+.nowPlayingInfo {
+  mix-blend-mode: difference;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 7px;
+  margin-left: 9px;
+  border-radius: 20px;
+  animation: titleBackground 120s linear infinite;
+  max-width: 400px;
+  min-width: 300px;
+}
+.nowPlayingInfo:hover {
+  cursor: pointer;
+  color: black;
+  animation: titleBackground 2s linear infinite;
+  .nowPlayingText:hover {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight: bolder;
+  }
+}
+.nowPlayingAlbumArt {
+  height: 50px;
+  width: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.nowPlayingText {
+  color: rgb(7, 54, 96);
+  font-family: "Gloria Hallelujah";
+  letter-spacing: 5px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  position: relative;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 9px;
+}
+.nowPlayingRelease {
+  text-align: center;
+}
+
+.addFavoriteTrack {
+  color: rgb(0, 119, 255);
+  font-size: 35px;
+  :hover {
+    color: rgb(33, 8, 123);
+  }
+}
+
+.playerControls {
+  border-radius: 10px;
+  padding-right: 10px;
+  background-color: rgba(36, 169, 230, 0.177);
+  display: flex;
+  align-items: center;
+}
+.playerControls > * {
+  display: flex;
+  border: none;
+}
+.playerTimeDisplay {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  color: rgb(187, 186, 218);
+  font-size: 12px;
+  padding: 11px;
+  font-family: "Varela Round";
+  letter-spacing: 1px;
+  background-color: rgba(0, 0, 0, 0.341);
+  .durationDisplay {
+    margin-left: 4px;
+    color: pink;
+    font-size: 10px;
+    letter-spacing: -1px;
+  }
+}
+.seekControl {
+  height: 2px;
+}
+.pausePlayControl {
+  color: rgb(255, 255, 255);
+  font-size: 23px;
+  padding: 7px;
+  background: none;
+  :hover {
+    color: blue;
+  }
+}
+.skipControl {
+  color: rgb(192, 216, 35);
+  font-size: 23px;
+  margin-left: 5px;
+  margin-right: 10px;
+  :hover {
+    color: black;
+  }
+}
+.muteIcons {
+  color: green;
+  font-size: 25px;
+}
+.volumeControl {
+  width: 45px;
+  color: aqua;
+  height: 3px;
+}
+
+.otherControls {
+}
+.shuffle {
+  color: red;
+  cursor: pointer;
+  background-color: grey;
+  font-size: 26px;
+  padding: 5px;
+  margin-left: 9px;
+  border-radius: 10px;
+  :hover {
+    color: yellow;
+  }
+}
+.shuffle-on {
+  font-size: 26px;
+  animation: shuffle-on 5s linear infinite;
+}
+
+.playlistOuterContainer {
+  position: relative;
+  align-self: end;
+}
+.playlist {
+  background-color: rgb(58, 70, 70);
+  position: absolute;
+  bottom: 0px;
+  max-height: 200px;
+  overflow-y: scroll;
+  scrollbar-color: red orange;
+  scrollbar-width: thin;
+  padding: 3px 20px 5px 2px;
+  border-radius: 40px;
+  width: 300px;
+}
+.playlistRender {
+}
+.playlistRender > li {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.playlistItemContainer {
+  font-size: 7px;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: -3px;
+  color: aqua;
+  list-style-type: none;
+}
+.playListItem:hover {
+  color: pink;
+  cursor: pointer;
+}
+.playItem {
+}
+.playlistImage {
+  height: 20px;
+  width: 20px;
+  margin-right: 3px;
+}
+.removeItemFromPlaylist {
+  cursor: pointer;
+  margin-left: 4px;
+  font-size: 12px;
+  color: red;
+  background: white;
+  display: inline;
+  :hover {
+    color: red;
+    background-color: rgb(28, 211, 21);
+    cursor: pointer;
+  }
+}
+
+@keyframes titleBackground {
+  0% {
+    background-color: aqua;
+  }
+  25% {
+    background-color: crimson;
+  }
+  50% {
+    background-color: rgb(20, 220, 70);
+  }
+  75% {
+    background-color: rgb(237, 233, 12);
+  }
+  100% {
+    background-color: aqua;
+  }
+}
+
+@keyframes shuffle-on {
+  0% {
+    background-color: aqua;
+    color: yellow;
+  }
+  25% {
+    background-color: crimson;
+    color: rgb(168, 168, 210);
+  }
+  50% {
+    background-color: rgb(20, 220, 70);
+    color: black;
+  }
+  75% {
+    background-color: rgb(237, 233, 12);
+    color: teal;
+  }
+  100% {
+    background-color: aqua;
+    color: yellow;
+  }
+}
