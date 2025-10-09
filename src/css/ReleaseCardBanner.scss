@@ -1,6 +1,17 @@
+.releasesBanner {
+}
+
+.releaseCardBanner {
+  //mix-blend-mode: difference;
+  :hover {
+    cursor: pointer;
+  }
+}
+
 .releaseCardBannerImage {
   height: 100px;
-  margin-bottom:-4px;
+  //mix-blend-mode: difference;
+  margin-bottom: -4px;
   :hover {
     cursor: pointer;
   }
@@ -8,10 +19,4 @@
 
 .releaseCardBannerTitle {
   font-size: 10px;
-}
-
-.releaseCardBanner {
-  :hover {
-    cursor: pointer;
-  }
 }

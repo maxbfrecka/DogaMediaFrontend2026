@@ -1,5 +1,9 @@
+.playList {
+}
+
 .playlist {
   display: flex;
+  flex-direction: column;
 }
 
 .playlistCoverImage {

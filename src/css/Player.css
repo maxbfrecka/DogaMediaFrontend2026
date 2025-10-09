@@ -1,20 +1,27 @@
-.nowPlayingCoverArt {
-  height: 100%;
-  background-color: white;
-}
-
-.audioPlayer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-}
-
 .player {
   width: 100%;
+  display: flex;
   position: fixed;
   left: 0;
   bottom: 0;
   z-index: 9999;
+}
+
+.nowPlayingTitle {
+  position: absolute;
+  bottom: 2rem;
+  left: 5.3rem;
+}
+
+.nowPlayingCoverArt {
+  height: 5rem;
+  background-color: rgb(255, 0, 225);
+}
+
+.audioPlayer {
+  /* position: fixed;
+  left: 0;
+  bottom: 0; */
 }
 
 .rhap_container {
