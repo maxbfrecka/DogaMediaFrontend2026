@@ -22,6 +22,7 @@
   padding: 0.1rem 0.2rem;
   margin: 0px;
   font-size: 0.85rem;
+  padding: 0rem;
 }
 
 .rhap_progress-bar {
@@ -40,7 +41,7 @@
 .rhap_controls-section,
 .rhap_progress-section,
 .rhap_volume-controls {
-  padding: 0.25rem 0;
+  padding: 0.25rem;
   margin: 0px;
   gap: 0.1rem;
   align-items: center;

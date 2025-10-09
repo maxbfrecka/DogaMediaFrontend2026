@@ -1,4 +1,28 @@
 .releasesBannerContainer {
   display: flex;
   gap: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 2rem;
+
+  overflow-x: auto; /* enables horizontal scroll */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #fff700 transparent;
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+/* Chrome, Edge, Safari */
+.releasesBannerContainer::-webkit-scrollbar {
+  height: 1px; /* or 1px if you want it ultra-thin */
+}
+
+.releasesBannerContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.releasesBannerContainer::-webkit-scrollbar-thumb {
+  background-color: #ff0000; /* or any subtle color */
+  border-radius: 1px;
 }

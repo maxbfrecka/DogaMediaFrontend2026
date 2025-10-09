@@ -3,25 +3,29 @@
 }
 .Navbar {
   font-size: 18px;
-  color: red;
+  color: rgb(0, 238, 255);
   width: 100%;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 9999;
   /* mix-blend-mode: difference; */
-  height: 1.1rem;
+  height: 1rem;
   background-color: greenyellow;
   display: flex;
   align-items: center;
-  padding: 2px;
+  align-content: center;
+  justify-content: baseline;
+  padding: 5px;
   padding-bottom: 0.4rem;
   margin-bottom: 0.2rem;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .homeIcon {
-  color: rgb(0, 98, 255);
+  color: rgb(255, 0, 0);
+  font-size: 1.7rem;
+  cursor: pointer;
 }
 
 .back {

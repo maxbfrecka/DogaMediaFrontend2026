@@ -1,6 +1,6 @@
 .tracklistContainer {
   font-size: 1rem;
-  width: 500px;
+  // width: 500px;
 }
 
 .trackCardNumber,
@@ -20,4 +20,8 @@
   gap: 1rem; /* optional spacing between elements */
   padding: 0.5rem;
   border-bottom: 1px solid #ccc; /* optional for visual separation */
+}
+.trackCardTime{
+  font-weight:700;
+  font-size:1.2rem;
 }
