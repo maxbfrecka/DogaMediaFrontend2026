@@ -1,20 +1,24 @@
 .releaseCard {
-  flex: 1 1 200px;
+  display:flex;
   box-sizing: border-box;
-  max-width: 200px;
-  background-color: rgb(254, 244, 244);
+  // background-color: rgb(254, 244, 244);
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  align-content: center;
+  padding:0.4rem;
   :hover {
     cursor: pointer;
   }
 }
 
 .releaseCardImage {
-  height: 150px;
-  margin: 5px;
+  height: 100px;
+  margin: 2px;
 }
 
 .releaseCardTitle {
-  font-size: 14px;
+  font-size: 10px;
   color: red;
   font-family: "Sarina";
 }
@@ -25,6 +29,6 @@
 }
 
 .releaseCardDate {
-  font-size: 12px;
+  font-size: 08px;
   font-family: "Sarina";
 }

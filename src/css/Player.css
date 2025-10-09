@@ -1,3 +1,14 @@
 .nowPlayingCoverArt {
   height: 80px;
 }
+
+.player {
+  background-color: rgb(37, 141, 246);
+  height: 7rem;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+  /* mix-blend-mode: difference; */
+}

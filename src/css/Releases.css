@@ -1,6 +1,24 @@
-.releasesContainer {
+.releasesPage {
+  height: 100%;
+  padding: 2.42rem;
+  padding-top: 0rem;
+}
+
+/* .releasesContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 3.2rem;
-  justify-content: flex-start;
+  gap: 1.5rem;
+  justify-content: space-evenly;
+  align-content: space-around;
+  align-items: baseline;
+} */
+
+.releasesContainer {
+  display: grid;
+  align-items: baseline;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(100px, 1fr)
+  ); /* adjust size as needed */
+  gap: 0.4rem 1rem; /* row-gap column-gap */
 }
