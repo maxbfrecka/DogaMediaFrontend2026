@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState, useRef } from "react"
+import React, { lazy, Suspense, useState, useRef, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import AudioPlayer, { RHAP_UI } from "react-h5-audio-player"
@@ -20,6 +20,33 @@ export default function Player() {
   const dispatch = useDispatch()
   const playlist = useSelector((state) => state.player.playlist)
   const nowPlayingTrack = useSelector((state) => state.player.nowPlayingTrack)
+
+  //gpt said this would fix the mobile playback issue. i dont understand it
+  useEffect(() => {
+    // for iOS / mobile browsers that block audio
+    const unlockAudio = () => {
+      const audio = playerRef.current?.audio?.current
+      if (audio) {
+        const playPromise = audio.play()
+        if (playPromise !== undefined) {
+          playPromise.catch((err) => {
+            console.log("Play prevented until user interaction:", err)
+          })
+        }
+      }
+      // remove listeners after first tap
+      window.removeEventListener("touchstart", unlockAudio)
+      window.removeEventListener("click", unlockAudio)
+    }
+
+    window.addEventListener("touchstart", unlockAudio)
+    window.addEventListener("click", unlockAudio)
+
+    return () => {
+      window.removeEventListener("touchstart", unlockAudio)
+      window.removeEventListener("click", unlockAudio)
+    }
+  }, [])
 
   //on ending, goes to playlist object and pops track
   const getNextTrack = () => {
