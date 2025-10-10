@@ -1,0 +1,85 @@
+.navBarPadding {
+  height: 2rem;
+}
+
+$navBarColor: rgb(0, 4, 255);
+
+.Navbar {
+  font-size: 18px;
+  color: $navBarColor;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  /* mix-blend-mode: difference; */
+  height: 1rem;
+  background-color: greenyellow;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: baseline;
+  padding: 5px;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
+  gap: 1rem;
+}
+
+.navBarBottom {
+  background-color: $navBarColor;
+  position: fixed;
+  left: 0;
+  top: 1.7rem;
+  width: 100%;
+  z-index: 9999;
+  height: 10px;
+  mix-blend-mode: difference;
+}
+
+.homeIcon {
+  color: rgb(255, 0, 0);
+  font-size: 1.7rem;
+  padding: 3px;
+  cursor: pointer;
+  animation: rainbow-bg 35s linear infinite, rainbow-color 45s linear infinite;
+}
+
+.back {
+  cursor: pointer;
+}
+
+.back {
+  cursor: pointer;
+}
+
+@keyframes rainbow-bg {
+  0% {
+    background-color: #ff0f0f;
+  }
+  35% {
+    background-color: #2de03f;
+  }
+  77% {
+    background-color: #00c8ff;
+  }
+  100% {
+    background-color: #ff0f0f;
+  }
+}
+@keyframes rainbow-color {
+  0% {
+    color: #84dc1f;
+  }
+  33% {
+    color: #e6e6e6;
+  }
+  56% {
+    color: #db0dce;
+  }
+  77% {
+    color: #00c8ff;
+  }
+  100% {
+    color: #84dc1f;
+  }
+}

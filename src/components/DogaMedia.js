@@ -7,7 +7,7 @@ import WebFont from "webfontloader"
 import { fetchReleases } from "../store/slices/releasesSlice"
 
 import Releases from "./modules/Releases"
-import ReleasePage from "./modules/ReleasePage"
+import Release from "./modules/Release"
 import Navbar from "./modules/Navbar"
 import Player from "./modules/Player"
 import DogaAudioPlayer from "./modules/DogaAudioPlayer/DogaAudioPlayer"
@@ -49,7 +49,7 @@ export default function DogaMedia() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Releases />} />
-          <Route path="/:releaseId" element={<ReleasePage />} />
+          <Route path="/:releaseId" element={<Release />} />
         </Routes>
         {/* <DogaAudioPlayer /> */}
         <Player />

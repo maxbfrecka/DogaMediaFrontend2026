@@ -1,0 +1,170 @@
+.player {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+//this isnt working. i wanted to do the same transparency effect on the bottom.
+.playerTop {
+  mix-blend-mode: difference;
+  background: linear-gradient(
+    to top,
+    rgba(0, 4, 255, 0.993) 0%,
+    rgb(0, 0, 0) 100%
+  );
+  position: fixed;
+  left: 0;
+  bottom: 5rem;
+  width: 100%;
+  z-index: 9999;
+  height: 40px;
+}
+
+.nowPlayingTitle {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 5.7rem;
+  font-family: "Droid Sans";
+  @media (max-width: 470px) {
+    left: 3px;
+    bottom: 5em;
+  }
+}
+
+.nowPlayingCoverArt {
+  height: 5rem;
+  background-color: rgb(255, 0, 225);
+}
+
+.audioPlayer {
+  /* position: fixed;
+  left: 0;
+  bottom: 0; */
+}
+
+.rhap_container {
+  background-color: rgb(225, 255, 0) !important;
+  padding: 0.1rem 0.2rem;
+  margin: 0px;
+  font-size: 1rem;
+  padding: 0rem;
+}
+
+.rhap_progress-bar {
+  background-color: #444;
+  height: 4px;
+  padding: 0px;
+  margin: 0px;
+}
+/* Change size, shape, color */
+.rhap_progress-indicator {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  background: url("../../public/icons/cd1.svg") center/contain no-repeat;
+  background-color: white; /* your color */
+  box-shadow: 0 0 6px #fff70080; /* soft glow */
+  transition: transform 0.2s ease;
+}
+
+/* On hover or active drag */
+.rhap_progress-indicator:hover,
+.rhap_progress-indicator:active {
+  transform: scale(1.3);
+}
+
+.rhap_time {
+  font-size: 0.75rem;
+  color: rgb(255, 0, 0);
+  font-family: monospace;
+}
+
+.rhap_controls-section,
+.rhap_progress-section,
+.rhap_volume-controls {
+  padding: 0.25rem;
+  margin: 0px;
+  gap: 0.1rem;
+  align-items: center;
+  justify-content: baseline;
+  height: 1.75rem;
+}
+
+.rhap_main-controls-button,
+.rhap_volume-button {
+  font-size: 1.5rem;
+  padding: 0.25rem;
+  padding: 0px;
+  margin: 0px;
+}
+
+//BUTTONS
+$buttonColor: #007bff;
+//POSITIONING
+$playPauseBottom: 0.7rem;
+$playPauseSize: 3rem;
+$playPauseLeft: 49%;
+$skipLeftRight: 40%;
+$playPauseSmall: 35px;
+$playPauseLeftSmall: 45%;
+
+.playButton {
+  height: 40px;
+  color: black;
+  fill: $buttonColor;
+  font-size: $playPauseSize;
+  position: fixed;
+  bottom: $playPauseBottom;
+  left: $playPauseLeft;
+  @media (max-width: 470px) {
+    font-size: $playPauseSmall;
+    height: $playPauseSmall;
+    left: $playPauseLeftSmall;
+  }
+}
+
+.pauseButton {
+  font-size: $playPauseSize;
+  color: $buttonColor;
+  position: fixed;
+  bottom: $playPauseBottom - 0.3;
+  left: 48%;
+  @media (max-width: 470px) {
+    font-size: $playPauseSmall;
+    left: $playPauseLeftSmall;
+  }
+}
+.nextTrack,
+.lastTrack {
+  position: fixed;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  fill: $buttonColor;
+  background-color: rgba(255, 0, 0, 0);
+  bottom: $playPauseBottom;
+  @media (max-width: 470px) {
+    font-size: 30px;
+  }
+}
+.lastTrack {
+  left: $skipLeftRight;
+  @media (max-width: 470px) {
+    left: 30%;
+  }
+}
+.nextTrack {
+  right: 39.5%;
+  @media (max-width: 760px) {
+    right: 37%;
+  }
+  @media (max-width: 470px) {
+    right: 30%;
+  }
+}
+.hiddenIcon {
+  display: none;
+}

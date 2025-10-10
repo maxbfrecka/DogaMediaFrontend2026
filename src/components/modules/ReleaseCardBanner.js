@@ -1,8 +1,6 @@
 import React, { Component, useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
-import "../../css/ReleaseCardBanner.scss"
-
 const ReleaseCardBanner = ({ release }) => {
   const navigate = useNavigate()
 

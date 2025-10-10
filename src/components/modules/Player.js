@@ -13,7 +13,15 @@ import {
   addToPlaylist,
 } from "../../store/slices/playerSlice"
 
-import "../../css/Player.css"
+import * as Icons from "../../icons"
+
+import "../../css/Player.scss"
+
+//ICONS
+import { BsFillPlayFill as Play } from "react-icons/bs"
+import { BsFillPauseFill as Pause } from "react-icons/bs"
+import { IoIosArrowDroprightCircle as Right } from "react-icons/io"
+import { IoIosArrowDropleftCircle as Left } from "react-icons/io"
 
 export default function Player() {
   const playerRef = useRef()
@@ -75,7 +83,9 @@ export default function Player() {
 
   return (
     <>
+      <div className="playerTop"></div>
       <div className="player">
+        {/* playertop difference thing in other file */}
         <img
           className="nowPlayingCoverArt"
           src={nowPlayingTrack?.cover_image || null}
@@ -92,6 +102,17 @@ export default function Player() {
           onClickPrevious={handleClickBack}
           showSkipControls={true}
           showJumpControls={false}
+          customIcons={{
+            play: <Icons.Play className="playButton" />,
+            pause: <Pause className="pauseButton" />,
+            loopOff: <Icons.Play className="hiddenIcon" />,
+            loop: <Icons.Play className="hiddenIcon" />,
+            next: <Right className="nextTrack" />,
+            previous: <Left className="lastTrack" />,
+            // pause: <Pause size={24} color="#fff700" />,
+            // volume: <Volume2 size={20} color="#fff700" />,
+            // volumeMute: <VolumeX size={20} color="#fff700" />,
+          }}
           // other props here
         />
         {/* {nowPlayingTrack?.audio_file && (

@@ -1,4 +1,5 @@
 .dogamedia {
   height: 95vh;
   min-height: 100%;
+  /* isolation: auto; */
 }

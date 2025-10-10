@@ -11,6 +11,7 @@ import {
 
 import LoadingBar from "./LoadingBar/LoadingBar"
 import Tracklist from "./Tracklist/Tracklist"
+import ReleasesBanner from "./ReleasesBanner"
 import SketchDisplay from "../processing/SketchDisplay"
 
 import { MdPlaylistAddCircle } from "react-icons/md"
@@ -18,6 +19,8 @@ import { BsFillPlayFill as Play } from "react-icons/bs"
 import "../../css/Release.scss"
 
 export default function Release() {
+  const [showModal, setShowModal] = useState(false)
+
   //get the releaseID from the URL/browser-router navigation
   const { releaseId } = useParams()
   const dispatch = useDispatch()
@@ -60,43 +63,82 @@ export default function Release() {
   }
 
   return (
-    <div releaseContainer>
-      {/* <SketchDisplay /> */}
-      <div className="release-detail">
-        <>
-          {release && (
-            <div className="releaseContainer">
-              <div className="releaseCoverContainer">
-                <img className="releasePageCover" src={release.cover_url} />
-              </div>
-              <div className="releaseInformationAndTracks">
-                <div className="releaseTitle">{release.title}</div>
-                <div className="releaseDetailContainer">
-                  {/* <div className="releaseCatalogNumber">
+    <>
+      <div className="releasesBannerOuterContainer">
+        <ReleasesBanner />
+      </div>
+      <div releasePageContainer class="releasePageContainer">
+        <div releaseContainer>
+          {/* <SketchDisplay /> */}
+          <div className="release-detail">
+            <>
+              {release && (
+                <div className="releaseContainer">
+                  <div className="releaseCoverContainer">
+                    <img
+                      className="releasePageCover"
+                      src={release.cover_url}
+                      style={{ cursor: "zoom-in" }}
+                      onClick={() => setShowModal(true)}
+                    />
+                    {showModal && (
+                      <div
+                        style={{
+                          position: "fixed",
+                          top: 0,
+                          left: 0,
+                          width: "100vw",
+                          height: "100vh",
+                          background: "rgba(0,0,0,0.8)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          zIndex: 9999,
+                        }}
+                        onClick={() => setShowModal(false)}
+                      >
+                        <img
+                          src={release.cover_url}
+                          alt="artwork zoomed"
+                          style={{
+                            maxWidth: "77vw",
+                            maxHeight: "77vh",
+                            boxShadow: "0 0 20px #ff0000ff",
+                          }}
+                        />
+                      </div>
+                    )}
+                  </div>
+                  <div className="releaseInformationAndTracks">
+                    <div className="releaseTitle">{release.title}</div>
+                    <div className="releaseDetailContainer">
+                      {/* <div className="releaseCatalogNumber">
                   {release.catalog_number}
                 </div> */}
-                  <div className="releaseReleaseDate">
-                    {release.release_date}
+                      <div className="releaseReleaseDate">
+                        {release.release_date}
+                      </div>
+                    </div>
+                    <div className="releaseControls">
+                      <Play
+                        className="playRelease"
+                        onClick={() => playRelease(release.tracks)}
+                      />
+                      <MdPlaylistAddCircle
+                        className="addReleaseToPlaylist"
+                        onClick={() => addReleaseToPlaylist(release.tracks)}
+                      />
+                    </div>
+                    <Tracklist tracks={release.tracks} />
+
+                    <pre className="releaseNotes">{release.about}</pre>
                   </div>
                 </div>
-                <div className="releaseControls">
-                  <Play
-                    className="playRelease"
-                    onClick={() => playRelease(release.tracks)}
-                  />
-                  <MdPlaylistAddCircle
-                    className="addReleaseToPlaylist"
-                    onClick={() => addReleaseToPlaylist(release.tracks)}
-                  />
-                </div>
-                <Tracklist tracks={release.tracks} />
-
-                <pre className="releaseNotes">{release.about}</pre>
-              </div>
-            </div>
-          )}
-        </>
+              )}
+            </>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   )
 }

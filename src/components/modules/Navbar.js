@@ -6,7 +6,8 @@ import { FaArrowLeftLong, FaArrowRight } from "react-icons/fa6"
 
 import Playlist from "./Playlist"
 
-import "../../css/Navbar.css"
+import "../../css/Navbar.scss"
+import "../../css/Player.scss"
 
 export default function Navbar() {
   const navigate = useNavigate()
@@ -20,6 +21,7 @@ export default function Navbar() {
         <FaArrowLeftLong className="back" onClick={() => navigate(-1)} />
         <FaArrowRight className="forward" onClick={() => navigate(1)} />
       </div>
+      <div className="navBarBottom"></div>
     </div>
   )
 }

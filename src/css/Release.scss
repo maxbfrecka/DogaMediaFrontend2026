@@ -5,27 +5,35 @@
   box-sizing: border-box; /* includes padding/border in width calculation */
   // height: 70vw;
   height: 100%;
-  padding-top: 7.2rem;
+  padding-top: 7.3rem;
+  padding-bottom: 5rem;
   overflow-x: auto; /* enables horizontal scroll */
-  scrollbar-width: thick; /* Firefox */
+  //scrollbar-width: thick; /* Firefox */
   scrollbar-color: #86f10b transparent;
   -ms-overflow-style: none; /* IE 10+ */
+  @media (max-width: 780px) {
+    scrollbar-width: unset; /* Firefox */
+    scrollbar-color: #e1ff00 transparent;
+  }
 }
 
 /* Chrome, Edge, Safari */
-.releasePageContainer::-webkit-scrollbar {
-  width: 10px; /* or 1px if you want it ultra-thin */
-}
+// .releasePageContainer::-webkit-scrollbar {
+//   width: 10px; /* or 1px if you want it ultra-thin */
+//   @media (max-width: 780px) {
+//     width: 50px;
+//   }
+// }
 
-.releasePageContainer::-webkit-scrollbar-track {
-  background: transparent;
-  width: 100px;
-}
+// .releasePageContainer::-webkit-scrollbar-track {
+//   background: transparent;
+//   width: 100px;
+// }
 
-.releasePageContainer::-webkit-scrollbar-thumb {
-  //background-color: #ff0000; /* or any subtle color */
-  border-radius: 0px;
-}
+// .releasePageContainer::-webkit-scrollbar-thumb {
+//   //background-color: #ff0000; /* or any subtle color */
+//   border-radius: 0px;
+// }
 
 .releaseContainer {
   display: grid;
@@ -36,6 +44,10 @@
   //   scrollbar-width: thin;
   //   scrollbar-color:yellow;
   //   overflow-y:auto;
+  @media (max-width: 780px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .releaseCoverContainer {
@@ -50,12 +62,19 @@
   grid-column-end: 3;
 }
 .releasePageCover {
-  padding: 20px;
+  margin: 20px;
   max-width: 90%;
   max-height: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25),
+    0 1.5px 8px 0 rgba(0, 200, 255, 0.15);
+  @media (max-width: 780px) {
+    width: 70%;
+    margin: 10px;
+  }
 }
 
 .releaseInformationAndTracks {
+  margin-left: 3rem;
   grid-column-start: 3;
   grid-column-end: 6;
   padding-left: 1.5rem;
@@ -63,9 +82,13 @@
 
 .releaseTitle {
   font-family: "Tilt Neon";
+  color: #242424;
   font-size: 5rem;
   margin: 5px;
   letter-spacing: 3px;
+  @media (max-width: 780px) {
+    font-size: 3rem;
+  }
 }
 
 .releaseControls {
@@ -79,6 +102,9 @@
     color: red;
     cursor: pointer;
   }
+  @media (max-width: 780px) {
+    font-size: 3.5rem;
+  }
 }
 
 .addReleaseToPlaylist {
@@ -87,6 +113,9 @@
   :hover {
     color: red;
     cursor: pointer;
+  }
+  @media (max-width: 780px) {
+    font-size: 3.5rem;
   }
 }
 
@@ -105,6 +134,9 @@
   letter-spacing: 0.25rem;
   font-size: 1.5rem;
   padding: 2px;
+  @media (max-width: 780px) {
+    font-size: 1rem;
+  }
 }
 
 .releaseNotes {

@@ -1,29 +1,27 @@
-import React, { Component, useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { BsFillPlayFill as Play } from "react-icons/bs";
-import { MdPlaylistAddCircle as AddToPlaylist } from "react-icons/md";
+import React, { Component, useState, useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { BsFillPlayFill as Play } from "react-icons/bs"
+import { MdPlaylistAddCircle as AddToPlaylist } from "react-icons/md"
 
 import {
   setNowPlayingTrack,
   addToPlaylist,
-} from "../../../store/slices/playerSlice";
+} from "../../../store/slices/playerSlice"
 
-import styles from "./Tracklist.module.scss";
+import styles from "./Tracklist.module.scss"
 
 export default function TrackCard({ track }) {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   function randomHex() {
-    return (
-      "#" + ((Math.random() * 0xffffff) << 0).toString(16).padStart(6, "0")
-    );
+    return "#" + ((Math.random() * 0xffffff) << 0).toString(16).padStart(6, "0")
   }
 
   function playTrack() {
-    dispatch(setNowPlayingTrack(track));
+    dispatch(setNowPlayingTrack(track))
   }
   function addTrackToPlaylist() {
-    dispatch(addToPlaylist(track));
+    dispatch(addToPlaylist(track))
   }
 
   return (
@@ -33,7 +31,7 @@ export default function TrackCard({ track }) {
     >
       <Play
         className={styles.playTrack}
-        style={{ color: randomHex() }}
+        style={{ backgroundColor: randomHex() }}
         onClick={() => playTrack(track)}
       />
       <AddToPlaylist
@@ -50,5 +48,5 @@ export default function TrackCard({ track }) {
         {track.length}
       </div>
     </div>
-  );
+  )
 }
