@@ -58,12 +58,36 @@
 .releaseInformationAndTracks {
   grid-column-start: 3;
   grid-column-end: 6;
-  padding-left: 1rem;
+  padding-left: 1.5rem;
 }
 
 .releaseTitle {
   font-family: "Tilt Neon";
   font-size: 5rem;
+  margin: 5px;
+  letter-spacing: 3px;
+}
+
+.releaseControls {
+  padding: 0.5rem;
+}
+
+.playRelease {
+  font-size: 4.5rem;
+  color: rgb(186, 249, 27);
+  :hover {
+    color: red;
+    cursor: pointer;
+  }
+}
+
+.addReleaseToPlaylist {
+  font-size: 4.5rem;
+  color: rgb(72, 255, 0);
+  :hover {
+    color: red;
+    cursor: pointer;
+  }
 }
 
 .releaseDetailContainer {
@@ -75,9 +99,17 @@
 }
 
 .releaseReleaseDate {
+  background-color: white;
+  color: red;
+  font-weight: 600;
+  letter-spacing: 0.25rem;
+  font-size: 1.5rem;
   padding: 2px;
 }
 
 .releaseNotes {
-  font-size: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.23rem;
+  letter-spacing: 1px;
 }

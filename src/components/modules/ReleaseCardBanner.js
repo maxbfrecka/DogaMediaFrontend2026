@@ -14,9 +14,10 @@ const ReleaseCardBanner = ({ release }) => {
     <div className="releaseCardBanner">
       <img
         className="releaseCardBannerImage"
-        src={release.cover_url}
+        src={release.cover_thumbnail_url}
         alt={release.title}
         onClick={() => handleClick(release.id)}
+        loading="lazy"
       />
       {/* <div
         className="releaseCardTitle"

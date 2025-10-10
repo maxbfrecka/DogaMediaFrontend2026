@@ -91,7 +91,7 @@ export default function Release() {
                 </div>
                 <Tracklist tracks={release.tracks} />
 
-                <pre className="releaseNotes">{release.notes}</pre>
+                <pre className="releaseNotes">{release.about}</pre>
               </div>
             </div>
           )}

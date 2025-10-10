@@ -1,20 +1,18 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component, useState, useEffect } from "react"
 //import { useSelector, useDispatch } from "react-redux"
-import "../../css/ReleaseCard.scss";
-import { useNavigate } from "react-router-dom";
+import "../../css/ReleaseCard.scss"
+import { useNavigate } from "react-router-dom"
 
 const ReleaseCard = ({ release }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   function randomHex() {
-    return (
-      "#" + ((Math.random() * 0xffffff) << 0).toString(16).padStart(6, "0")
-    );
+    return "#" + ((Math.random() * 0xffffff) << 0).toString(16).padStart(6, "0")
   }
 
   const handleClick = (catalogNumber) => {
-    navigate("/" + catalogNumber);
-  };
+    navigate("/" + catalogNumber)
+  }
 
   return (
     <div
@@ -23,8 +21,9 @@ const ReleaseCard = ({ release }) => {
     >
       <img
         className="releaseCardImage"
-        src={release.cover_url}
+        src={release.cover_thumbnail_url}
         alt={release.title}
+        loading="lazy"
         onClick={() => handleClick(release.id)}
       />
       <div className="releaseCardTitle" onClick={() => handleClick(release.id)}>
@@ -40,7 +39,7 @@ const ReleaseCard = ({ release }) => {
         {release.release_date}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ReleaseCard;
+export default ReleaseCard
