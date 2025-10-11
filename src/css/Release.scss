@@ -5,7 +5,7 @@
   box-sizing: border-box; /* includes padding/border in width calculation */
   // height: 70vw;
   height: 100%;
-  padding-top: 7.3rem;
+  padding-top: 7rem;
   padding-bottom: 5rem;
   overflow-x: auto; /* enables horizontal scroll */
   //scrollbar-width: thick; /* Firefox */
@@ -85,7 +85,7 @@
   color: #242424;
   font-size: 5rem;
   margin: 5px;
-  letter-spacing: 3px;
+  letter-spacing: 5px;
   @media (max-width: 780px) {
     font-size: 3rem;
   }

@@ -7,7 +7,8 @@
   width: 100%;
   display: flex;
   justify-content: center; /* centers the inner horizontally */
-  padding-top: 3rem;
+  align-content: center;
+  padding-top: 2rem;
   //background: rgba(0, 0, 0, 0.5); /* optional backdrop if needed */
   z-index: 10;
   @media (max-width: 768px) {
@@ -16,6 +17,8 @@
 
 .releasesBannerInnerContainer {
   display: flex;
+  padding-top: 10px;
+  align-content: center;
   gap: 10px;
   max-width: 94%; /* constrains width so it’s centered in page */
   overflow-x: auto; /* scrolls horizontally */
@@ -65,4 +68,48 @@
 
 .releaseCardBannerTitle {
   font-size: 10px;
+}
+
+.releaseItem.active {
+  outline: 5px solid #c8ff00;
+  background-color: #00c8ff;
+  //transform: scale(1.2);
+  transition: transform 0.3s ease, outline 0.3s ease;
+  animation: rainbow-outline 9s linear infinite,
+    rainbow-background 5s linear infinite;
+  width: 200px;
+  height: 95px;
+  color: pink;
+}
+
+@keyframes rainbow-outline {
+  0% {
+    outline-color: #ff0f0f;
+  }
+  35% {
+    outline-color: #2de03f;
+  }
+  77% {
+    outline-color: #00c8ff;
+  }
+  100% {
+    outline-color: #ff0f0f;
+  }
+}
+@keyframes rainbow-background {
+  0% {
+    background-color: #84dc1f;
+  }
+  33% {
+    background-color: #f70000;
+  }
+  56% {
+    background-color: #db0dce;
+  }
+  77% {
+    background-color: #00c8ff;
+  }
+  100% {
+    background-color: #84dc1f;
+  }
 }

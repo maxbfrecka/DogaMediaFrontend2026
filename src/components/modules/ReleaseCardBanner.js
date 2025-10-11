@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
-const ReleaseCardBanner = ({ release }) => {
+const ReleaseCardBanner = ({ release, id, className }) => {
   const navigate = useNavigate()
 
   const handleClick = (releaseId) => {
@@ -9,7 +9,7 @@ const ReleaseCardBanner = ({ release }) => {
   }
 
   return (
-    <div className="releaseCardBanner">
+    <div className={`releaseCardBanner ${className || ""}`} id={id}>
       <img
         className="releaseCardBannerImage"
         src={release.cover_thumbnail_url}
@@ -17,24 +17,6 @@ const ReleaseCardBanner = ({ release }) => {
         onClick={() => handleClick(release.id)}
         loading="lazy"
       />
-      {/* <div
-        className="releaseCardTitle"
-        onClick={() => handleClick(release.catalog_number)}
-      >
-        {release.title}
-      </div>
-      <div
-        className="releaseCardCatalogNumber"
-        onClick={() => handleClick(release.catalog_number)}
-      >
-        {release.catalog_number}
-      </div>
-      <div
-        className="releaseCardDate"
-        onClick={() => handleClick(release.catalog_number)}
-      >
-        {release.release_date}
-      </div> */}
     </div>
   )
 }

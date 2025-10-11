@@ -25,9 +25,19 @@
 
 .nowPlayingTitle {
   position: absolute;
+  //bottom: 2.6rem;
   bottom: 0.5rem;
-  left: 5.7rem;
+  left: 8.1rem;
+  color: rgb(0, 0, 0);
+  letter-spacing: 5px;
   font-family: "Droid Sans";
+  font-size: 10px;
+  animation: rainbow-color 19s linear infinite,
+    rainbow-background 23s linear infinite;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px;
   @media (max-width: 470px) {
     left: 3px;
     bottom: 5em;
@@ -35,7 +45,7 @@
 }
 
 .nowPlayingCoverArt {
-  height: 5rem;
+  height: 7rem;
   background-color: rgb(255, 0, 225);
 }
 
@@ -167,4 +177,36 @@ $playPauseLeftSmall: 45%;
 }
 .hiddenIcon {
   display: none;
+}
+
+@keyframes rainbow-color {
+  0% {
+    color: #444444;
+  }
+  35% {
+    color: #2de03f;
+  }
+  77% {
+    color: #00c8ff;
+  }
+  100% {
+    color: #ff0f0f;
+  }
+}
+@keyframes rainbow-background {
+  0% {
+    background-color: #84dc1f;
+  }
+  33% {
+    background-color: #0042c6;
+  }
+  56% {
+    background-color: #db0dce;
+  }
+  77% {
+    background-color: #00c8ff;
+  }
+  100% {
+    background-color: #84dc1f;
+  }
 }
