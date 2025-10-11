@@ -7,24 +7,23 @@ import LoadingBar from ".//LoadingBar/LoadingBar"
 import LoadingBar2 from "./LoadingBar2"
 import "../../css/ReleasesBanner.scss"
 
-export default function ReleasesBanner() {
+export default function ReleasesBanner({ releaseId }) {
   const releases = useSelector((state) => state.releases.releases)
   const status = useSelector((state) => state.releases.status)
-  const { releaseId } = useParams()
+  //const { releaseId } = useParams()
   const location = useLocation()
 
   useEffect(() => {
     if (releases.length && releaseId) {
       const el = document.getElementById(`release-${releaseId}`)
-      if (el) {
-        el.scrollIntoView({
-          behavior: "smooth",
-          inline: "center",
-          block: "nearest",
-        })
-      }
+      el?.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      })
+      el?.classList.add("active")
     }
-  }, [releases, releaseId])
+  }, [releaseId, releases])
 
   if (status === "loading") {
     return <LoadingBar />

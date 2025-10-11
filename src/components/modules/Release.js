@@ -12,6 +12,7 @@ import {
 import LoadingBar from "./LoadingBar/LoadingBar"
 import Tracklist from "./Tracklist/Tracklist"
 import ReleasesBanner from "./ReleasesBanner"
+import ReleaseCover from "./ReleaseCover"
 import SketchDisplay from "../processing/SketchDisplay"
 
 import { MdPlaylistAddCircle } from "react-icons/md"
@@ -20,7 +21,7 @@ import "../../css/Release.scss"
 
 export default function Release() {
   const [showModal, setShowModal] = useState(false)
-
+  const [loaded, setLoaded] = useState(false)
   //get the releaseID from the URL/browser-router navigation
   const { releaseId } = useParams()
   const dispatch = useDispatch()
@@ -64,9 +65,9 @@ export default function Release() {
 
   return (
     <>
-      <div className="releasesBannerOuterContainer">
+      {/* <div className="releasesBannerOuterContainer">
         <ReleasesBanner />
-      </div>
+      </div> */}
       <div releasePageContainer class="releasePageContainer">
         <div releaseContainer>
           {/* <SketchDisplay /> */}
@@ -74,10 +75,61 @@ export default function Release() {
             <>
               {release && (
                 <div className="releaseContainer">
+                  {/* <div className="coverWrapper">
+                    {!loaded && <div className="coverLoading">Loading…</div>}
+                    <img
+                      src={release.cover_url}
+                      alt="cover"
+                      className={`coverImage ${loaded ? "loaded" : "hidden"}`}
+                      onLoad={() => setLoaded(true)}
+                      loading="lazy"
+                    />
+                  </div> */}
+
+                  {/* attempting progressive loading, not working */}
+
+                  {/* <div className="coverWrapper">
+                    <ReleaseCover
+                      thumb={release.cover_thumbnail_url}
+                      full={release.cover_url}
+                      style={{ cursor: "zoom-in" }}
+                      onClick={() => setShowModal(true)}
+                    />
+                    {showModal && (
+                      <div
+                        style={{
+                          position: "fixed",
+                          top: 0,
+                          left: 0,
+                          width: "100vw",
+                          height: "100vh",
+                          background: "rgba(0,0,0,0.8)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          zIndex: 9999,
+                        }}
+                        onClick={() => setShowModal(false)}
+                      >
+                        <img
+                          src={release.cover_url}
+                          alt="artwork zoomed"
+                          style={{
+                            maxWidth: "77vw",
+                            maxHeight: "77vh",
+                            boxShadow: "0 0 20px #ff0000ff",
+                          }}
+                        />
+                      </div>
+                    )}
+                  </div> */}
+
                   <div className="releaseCoverContainer">
                     <img
                       className="releasePageCover"
                       src={release.cover_url}
+                      onLoad={() => setLoaded(true)}
+                      alt="Album cover"
                       style={{ cursor: "zoom-in" }}
                       onClick={() => setShowModal(true)}
                     />
