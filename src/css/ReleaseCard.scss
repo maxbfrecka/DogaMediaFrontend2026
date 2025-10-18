@@ -12,9 +12,11 @@
   }
 }
 
+$releaseCardSize: 9rem;
+
 .releaseCardImage {
-  height: 7rem;
-  width: 7rem;
+  height: $releaseCardSize;
+  width: $releaseCardSize;
   margin: 2px;
 }
 
@@ -33,4 +35,11 @@
   font-size: 08px;
   font-family: "Sarina";
   color: rgb(46, 49, 51);
+}
+
+.releaseCard--highlight {
+  //border: 2px solid rgba(255, 209, 102, 0.9);
+  //box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  //transform: translateY(-10px);
+  //background-color: white;
 }

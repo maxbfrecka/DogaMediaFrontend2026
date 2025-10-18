@@ -17,8 +17,13 @@ const releasesSlice = createSlice({
     releases: [],
     status: "idle", // 'idle' | 'loading' | 'succeeded' | 'failed'
     error: null,
+    highlights: true,
   },
-  reducers: {},
+  reducers: {
+    setHighlights: (state, action) => {
+      state.highlights = !state.highlights
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchReleases.pending, (state) => {
@@ -34,5 +39,7 @@ const releasesSlice = createSlice({
       })
   },
 })
+
+export const { setHighlights } = releasesSlice.actions
 
 export default releasesSlice.reducer

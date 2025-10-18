@@ -15,10 +15,7 @@ const ReleaseCard = ({ release }) => {
   }
 
   return (
-    <div
-      className="releaseCard"
-      // style={{ color: "black", backgroundColor: randomHex() }}
-    >
+    <div className={`releaseCard ${release && release.highlight ? "releaseCard--highlight" : ""}`}>
       <img
         className="releaseCardImage"
         src={release.cover_thumbnail_url}

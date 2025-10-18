@@ -9,9 +9,13 @@ import "../../css/Releases.scss"
 export default function Releases() {
   const releases = useSelector((state) => state.releases.releases)
   const status = useSelector((state) => state.releases.status)
+  const highlightsOnly = useSelector((state) => state.releases.highlights)
 
   function releasesList(releases) {
     console.log(releases)
+    if (highlightsOnly) {
+      releases = releases.filter((release) => release.highlight === true)
+    }
     return (
       <>
         {releases.map((release, index) => (

@@ -18,7 +18,8 @@ $navBarColor: rgb(0, 4, 255);
   display: flex;
   align-items: center;
   align-content: center;
-  justify-content: baseline;
+  justify-content: space-between;
+  justify-items: center;
   padding: 5px;
   padding-bottom: 0.4rem;
   margin-bottom: 0.2rem;
@@ -36,6 +37,12 @@ $navBarColor: rgb(0, 4, 255);
   mix-blend-mode: difference;
 }
 
+.linkGroup {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
 .homeIcon {
   outline: 1px rgb(170, 255, 0) solid;
   color: rgb(255, 0, 0);
@@ -43,6 +50,26 @@ $navBarColor: rgb(0, 4, 255);
   padding: 3px;
   cursor: pointer;
   animation: rainbow-bg 35s linear infinite, rainbow-color 45s linear infinite;
+}
+
+.highlightsBox {
+  background-color: rgb(219, 205, 232);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: red;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding-right: 25px;
+  padding-left: 20px;
+  border-radius: 5px;
+}
+
+.highlightsCheckbox {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
 }
 
 .back {

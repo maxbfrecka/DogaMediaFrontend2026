@@ -4,7 +4,8 @@
   //justify-content: center;
   //align-content: center;
   height: 100%;
-  padding: 2.42rem;
+  padding: 3.42rem;
+  margin-top: 1rem;
   padding-top: 0rem;
 }
 
@@ -21,7 +22,8 @@
   display: grid;
   align-items: baseline;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 1rem;
+  gap: 4rem;
+  row-gap: 0rem;
 }
 
 @media (max-width: 768px) {
